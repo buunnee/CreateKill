@@ -1,20 +1,32 @@
 package createkill;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import java.io.IOException;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 
 public class CreateKillController {
 
-    private ProcessManager processManager = new ProcessManager();
+    private final ProcessManager processManager = new ProcessManager();
 
     @FXML
-    private void openNotepad(ActionEvent event) {
+    public void handleOpenNotepad() {
         processManager.startNotepad();
     }
 
     @FXML
-    private void killNotepad(ActionEvent event) {
+    public void handleCloseNotepad() {
         processManager.killNotepad();
+    }
+
+    // Abrir el CMD y ejecutar el comando ping
+    @FXML
+    public void handleOpenCMDPing() {
+        processManager.startCMDPing();
+    }
+
+    // Cerrar el CMD que está ejecutando el ping
+    @FXML
+    public void handleCloseCMD() {
+        processManager.killCMD();
     }
 }

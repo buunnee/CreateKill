@@ -2,15 +2,25 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.GridPane?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="createkill.CreateKillController">
-    <padding>
-        <Insets top="20" right="20" bottom="20" left="20"/>
-    </padding>
+<GridPane fx:controller="createkill.CreateKillController"
+          xmlns:fx="http://javafx.com/fxml"
+          alignment="CENTER"
+          hgap="10" vgap="10">
     
-    <Button text="Abrir Notepad" onAction="#openNotepad"/>
-    <Button text="Cerrar Notepad" onAction="#killNotepad"/>
-</VBox>
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+    <!-- Botón para abrir Notepad -->
+    <Button text="Abrir Notepad" onAction="#handleOpenNotepad" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    
+    <!-- Botón para cerrar Notepad -->
+    <Button text="Cerrar Notepad" onAction="#handleCloseNotepad" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+    <!-- Botón para abrir CMD y hacer ping -->
+    <Button text="Abrir CMD - Ping" onAction="#handleOpenCMDPing" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    
+    <!-- Botón para cerrar CMD -->
+    <Button text="Cerrar CMD" onAction="#handleCloseCMD" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+</GridPane>
